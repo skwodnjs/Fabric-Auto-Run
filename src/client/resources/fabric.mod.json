@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "auto_run",
+	"version": "${version}",
+	"name": "Auto Run",
+	"description": "You can run easily.",
+	"authors": [
+		"JWN__"
+	],
+	"contact": {
+		"homepage": "https://jwn-s.tistory.com/",
+		"sources": "https://github.com/skwodnjs/Fabric-Auto-Run.git"
+	},
+	"license": "MIT",
+	"icon": "assets/auto_run/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"jwn.auto_run.AutoRunClient"
+		]
+	},
+	"mixins": [
+		{
+			"config": "auto_run.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.10",
+		"minecraft": "~1.21.4",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
