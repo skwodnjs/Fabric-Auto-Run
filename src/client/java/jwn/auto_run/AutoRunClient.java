@@ -1,5 +1,6 @@
 package jwn.auto_run;
 
+import jwn.auto_run.event.KeyInputHandler;
 import net.fabricmc.api.ClientModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +13,8 @@ public class AutoRunClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
 		// This entrypoint is suitable for setting up client-specific logic, such as rendering.
+
+		KeyInputHandler.register();
 
 		LOGGER.info("Hello Fabric world!");
 	}
