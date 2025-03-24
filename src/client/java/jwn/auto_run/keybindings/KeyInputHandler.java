@@ -1,6 +1,7 @@
-package jwn.auto_run.event;
+package jwn.auto_run.keybindings;
 
 import jwn.auto_run.AutoRunClient;
+import jwn.auto_run.IClientPlayerAccess;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.option.KeyBinding;
@@ -18,7 +19,10 @@ public class KeyInputHandler {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             if (AutoRunKey.wasPressed()) {
                 if (client.player != null) {
-                    client.player.sendMessage(Text.literal("run!"), false);
+                    if (client.player instanceof IClientPlayerAccess playerAccess) {
+                        playerAccess.autoRunModeToggle();
+                        client.player.sendMessage(Text.literal("Auto Run Mode: " + playerAccess.isAutoRunMode()), true);
+                    }
                 }
             }
         });

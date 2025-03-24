@@ -1,6 +1,6 @@
 package jwn.auto_run;
 
-import jwn.auto_run.event.KeyInputHandler;
+import jwn.auto_run.keybindings.KeyInputHandler;
 import net.fabricmc.api.ClientModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
