@@ -10,7 +10,8 @@ public class ClientTickHandler implements ClientTickEvents.EndTick {
     public void onEndTick(MinecraftClient minecraftClient) {
         if (minecraftClient.player instanceof IClientPlayerAccess playerAccess) {
             if (playerAccess.isAutoRunMode()) {
-                System.out.println("RUN!");
+                minecraftClient.player.setSprinting(true);
+                minecraftClient.options.forwardKey.setPressed(true);
             }
         }
     }
