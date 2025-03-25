@@ -3,7 +3,8 @@
   "package": "jwn.auto_run.mixin.client",
   "compatibilityLevel": "JAVA_21",
   "client": [
-    "ClientPlayerEntityMixin"
+    "ClientPlayerEntityMixin",
+    "KeyBindingAccessor"
   ],
   "injectors": {
     "defaultRequire": 1
